@@ -1,21 +1,20 @@
-const movies = [
-  {
-    title: "Heathers",
-    image: "https://upload.wikimedia.org/wikipedia/en/5/50/Heathers_film_poster.jpg"
-  },
-  {
-    title: "JoJo's Bizarre Adventure",
-    image: "https://upload.wikimedia.org/wikipedia/en/6/6f/JoJo%27s_Bizarre_Adventure_Part_1.jpg"
-  }
-];
+const API_KEY = "PUT_YOUR_KEY_HERE";
+const API_URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`;
 
-const container = document.getElementById("movies");
+fetch(API_URL)
+  .then(res => res.json())
+  .then(data => showMovies(data.results));
 
-movies.forEach(movie => {
-  const div = document.createElement("div");
-  div.innerHTML = `
-    <img src="${movie.image}" width="120"><br>
-    ${movie.title}
-  `;
-  container.appendChild(div);
-});
+function showMovies(movies) {
+  const container = document.getElementById("movies");
+  container.innerHTML = "";
+
+  movies.forEach(movie => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
+      <p>${movie.title || movie.name}</p>
+    `;
+    container.appendChild(div);
+  });
+}
