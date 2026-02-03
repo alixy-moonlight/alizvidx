@@ -1,38 +1,39 @@
 body {
-  margin: 0;
   background: #0f0f0f;
   color: white;
-  font-family: Arial, sans-serif;
   text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
 }
 
 h1 {
+  font-size: 40px;
   margin: 20px 0;
+  letter-spacing: 2px;
 }
 
 #movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
 #movies div {
   background: #1c1c1c;
-  padding: 10px;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-#movies div:hover {
-  transform: scale(1.05);
+  padding: 15px;
+  border-radius: 12px;
+  width: 160px;
 }
 
 #movies img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-#movies div {
-  font-size: 14px;
+#movies p {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 600;
 }
