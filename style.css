@@ -1,24 +1,38 @@
 body {
-  background: #111;
+  margin: 0;
+  background: #0f0f0f;
   color: white;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
+}
+
+h1 {
+  margin: 20px 0;
 }
 
 #movies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
-.movie {
-  background: #222;
+#movies div {
+  background: #1c1c1c;
   padding: 10px;
   border-radius: 10px;
+  transition: transform 0.2s;
 }
 
-.movie img {
+#movies div:hover {
+  transform: scale(1.05);
+}
+
+#movies img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+#movies div {
+  font-size: 14px;
 }
