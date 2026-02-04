@@ -1,36 +1,27 @@
-
 * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 body { background:#000; color:#fff; }
 
 /* NAVBAR */
 header {
-    position: fixed;
-    top: 0; width: 100%;
-    padding: 15px 30px;
-    display: flex; justify-content: space-between;
-    background: linear-gradient(to bottom,#000,transparent);
-    z-index: 100;
+    position: fixed; top:0; width:100%;
+    padding:15px 30px; display:flex; justify-content:space-between;
+    background: linear-gradient(to bottom,#000,transparent); z-index:100;
 }
-.logo { font-size: 24px; font-weight: bold; }
+.logo { font-size:24px; font-weight:bold; }
 #searchInput {
-    padding: 6px 12px;
-    width: 180px;
-    font-size: 13px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
+    padding:6px 12px; width:180px; font-size:13px;
+    border-radius:20px; background:rgba(255,255,255,0.1);
+    color:#fff; border:1px solid rgba(255,255,255,0.3);
 }
-#searchInput::placeholder { color: #ccc; }
+#searchInput::placeholder { color:#ccc; }
 
 /* HERO */
 .hero {
-    position: relative;
-    height: 80vh;
+    position: relative; height:80vh;
     background: url("https://upload.wikimedia.org/wikipedia/en/7/7a/Night_of_the_Living_Dead_%281968_film%29.jpg") center/cover no-repeat;
 }
-.hero-overlay { position: absolute; inset:0; background: linear-gradient(to top,#000,transparent); }
-.hero-content { position: absolute; bottom:50px; left:30px; }
+.hero-overlay { position:absolute; inset:0; background: linear-gradient(to top,#000,transparent); }
+.hero-content { position:absolute; bottom:50px; left:30px; }
 .hero h1 { font-size:48px; margin-bottom:10px; }
 .hero p { font-size:18px; margin-bottom:20px; color:#ccc; }
 .buttons button {
