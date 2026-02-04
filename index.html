@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Movie Wall</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-FLIX</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>My Movie Wall</h1>
-<div id="movies"></div>
+<!-- NAVBAR -->
+<header>
+    <div class="logo">Z-FLIX</div>
+    <div class="nav-icons">
+        🔍 💬 🎮 🔔
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Greenland 2: Migration</h1>
+        <p>65% Match • 2026</p>
+        <div class="buttons">
+            <button class="play">▶ Play</button>
+            <button class="info">ℹ More Info</button>
+        </div>
+    </div>
+</section>
+
+<!-- MOVIE ROWS -->
+<section class="movie-section">
+    <h2>Trending Now</h2>
+    <div class="movies-row" id="trending"></div>
+</section>
+
+<section class="movie-section">
+    <h2>Popular Movies</h2>
+    <div class="movies-row" id="popular"></div>
+</section>
+
+<section class="movie-section">
+    <h2>Top Picks</h2>
+    <div class="movies-row" id="topPicks"></div>
+</section>
 
 <script src="app.js"></script>
 </body>
