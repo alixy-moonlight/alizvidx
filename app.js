@@ -8,7 +8,7 @@ const popular = [
   { title:"The Little Shop of Horrors", img:"https://upload.wikimedia.org/wikipedia/en/5/5e/LittleShopOfHorrorsPoster.jpg", link:"https://archive.org/download/LittleShopOfHorrors/LittleShopOfHorrors.mp4", year:"1960", description:"A nerdy florist raises a plant that feeds on human blood." }
 ];
 
-const topPicks = []; // Add more if you want
+const topPicks = []; // Add more if you like
 
 let currentHeroLink = trending[0].link;
 let currentMovieDescription = trending[0].description;
@@ -37,19 +37,20 @@ loadMovies('topPicks', topPicks);
 
 // Play button opens video modal
 const videoModal = document.getElementById('videoModal');
-document.getElementById('playButton').addEventListener('click', ()=>{
-    videoModal.innerHTML = `<div class="modal-content">
-        <span id="closeVideo">&times;</span>
-        <video width="100%" height="500" controls autoplay>
-            <source src="${currentHeroLink}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>`;
+const videoPlayer = document.getElementById('videoPlayer');
+const closeVideo = document.getElementById('closeVideo');
+
+document.getElementById('playButton').addEventListener('click', () => {
+    videoPlayer.src = currentHeroLink;
+    videoPlayer.play();
     videoModal.style.display = "block";
-    document.getElementById('closeVideo').addEventListener('click', ()=>{
-        videoModal.style.display = "none";
-        videoModal.innerHTML = "";
-    });
+});
+
+closeVideo.addEventListener('click', () => {
+    videoModal.style.display = "none";
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+    videoPlayer.src = "";
 });
 
 // Info button opens modal
