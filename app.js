@@ -8,7 +8,7 @@ const popular = [
   { title:"The Little Shop of Horrors", img:"https://upload.wikimedia.org/wikipedia/en/5/5e/LittleShopOfHorrorsPoster.jpg", link:"https://archive.org/download/LittleShopOfHorrors/LittleShopOfHorrors.mp4", year:"1960", description:"A nerdy florist raises a plant that feeds on human blood." }
 ];
 
-const topPicks = []; // Add more if you like
+const topPicks = []; // Add more if you want
 
 let currentHeroLink = trending[0].link;
 let currentMovieDescription = trending[0].description;
@@ -26,6 +26,9 @@ function loadMovies(rowId, movies){
             document.getElementById('heroYear').textContent = movie.year;
             currentHeroLink = movie.link;
             currentMovieDescription = movie.description;
+
+            // Also update hero background
+            document.getElementById('heroSection').style.background = `url(${movie.img}) center/cover no-repeat`;
         });
         container.appendChild(img);
     });
@@ -35,7 +38,7 @@ loadMovies('trending', trending);
 loadMovies('popular', popular);
 loadMovies('topPicks', topPicks);
 
-// Play button opens video modal
+// Play button
 const videoModal = document.getElementById('videoModal');
 const videoPlayer = document.getElementById('videoPlayer');
 const closeVideo = document.getElementById('closeVideo');
@@ -43,7 +46,7 @@ const closeVideo = document.getElementById('closeVideo');
 document.getElementById('playButton').addEventListener('click', () => {
     videoPlayer.src = currentHeroLink;
     videoPlayer.play();
-    videoModal.style.display = "block";
+    videoModal.style.display = "flex";
 });
 
 closeVideo.addEventListener('click', () => {
@@ -53,22 +56,22 @@ closeVideo.addEventListener('click', () => {
     videoPlayer.src = "";
 });
 
-// Info button opens modal
+// Info button
 const infoModal = document.getElementById('infoModal');
 document.getElementById('infoButton').addEventListener('click', ()=>{
     document.getElementById('infoTitle').textContent = document.getElementById('heroTitle').textContent;
     document.getElementById('infoDesc').textContent = currentMovieDescription;
-    infoModal.style.display = "block";
+    infoModal.style.display = "flex";
 });
 document.getElementById('closeInfo').addEventListener('click', ()=>{ infoModal.style.display = "none"; });
 
-// Search bar
+// Search
 document.getElementById('searchInput').addEventListener('input', e=>{
     const term = e.target.value.toLowerCase();
     [trending, popular, topPicks].forEach(arr=>{
         arr.forEach(movie=>{
             const img = document.querySelector(`img[alt="${movie.title}"]`);
-            img.style.display = movie.title.toLowerCase().includes(term) ? "" : "none";
+            if(img) img.style.display = movie.title.toLowerCase().includes(term) ? "" : "none";
         });
     });
 });
