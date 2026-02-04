@@ -1,39 +1,35 @@
 body {
-  background: #0f0f0f;
+  background: #111;
   color: white;
   text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  margin: 0;
+  font-family: Arial;
 }
 
 h1 {
-  font-size: 40px;
-  margin: 20px 0;
-  letter-spacing: 2px;
+  font-size: 48px;
+  margin: 20px;
 }
 
 #movies {
-  display: flex;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 30px;
   padding: 20px;
 }
 
 #movies div {
-  background: #1c1c1c;
+  background: #222;
   padding: 15px;
-  border-radius: 12px;
-  width: 160px;
+  border-radius: 15px;
 }
 
-#movies img {
+img {
   width: 100%;
   border-radius: 10px;
 }
 
-#movies p {
-  font-size: 18px;
+p {
+  font-size: 20px;
   margin-top: 10px;
-  font-weight: 600;
 }
