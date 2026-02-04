@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALIZVIDX</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALIZVIDX</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -42,6 +42,23 @@
     <h2>Top Picks</h2>
     <div class="movies-row" id="topPicks"></div>
 </section>
+
+<!-- Cinema Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span id="closeVideo">&times;</span>
+        <iframe id="videoFrame" width="100%" height="500px" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Info Modal -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span id="closeInfo">&times;</span>
+        <h2 id="infoTitle"></h2>
+        <p id="infoDesc"></p>
+    </div>
+</div>
 
 <script src="app.js"></script>
 </body>
