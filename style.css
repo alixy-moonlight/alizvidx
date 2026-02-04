@@ -1,35 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
-  background: #111;
-  color: white;
-  text-align: center;
-  font-family: Arial;
+    background: #000;
+    color: #fff;
 }
 
-h1 {
-  font-size: 48px;
-  margin: 20px;
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #000, transparent);
+    z-index: 100;
 }
 
-#movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-#movies div {
-  background: #222;
-  padding: 15px;
-  border-radius: 15px;
+.nav-icons span {
+    margin-left: 20px;
+    cursor: pointer;
 }
 
-img {
-  width: 100%;
-  border-radius: 10px;
+/* HERO */
+.hero {
+    position: relative;
+    height: 80vh;
+    background: url("https://image.tmdb.org/t/p/original/z3pD0Jqk0gCq8Pz2Pq6.jpg") center/cover no-repeat;
 }
 
-p {
-  font-size: 20px;
-  margin-top: 10px;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.buttons button {
+    padding: 12px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.play { background: #fff; color: #000; }
+.info { background: rgba(109,109,110,0.7); color: #fff; }
+
+/* MOVIE ROWS */
+.movie-section {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.movie-section h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.movies-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.movies-row img {
+    height: 180px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.movies-row img:hover {
+    transform: scale(1.05);
 }
